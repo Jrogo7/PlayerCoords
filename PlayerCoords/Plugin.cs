@@ -140,13 +140,13 @@ namespace PlayerCoords
           webserviceStopwatch.ElapsedMilliseconds > Configuration.webserverConfig.interval &&
           RestUtils.failedRequests <= RestUtils.maxFailedRequests)
         {
-            updateList();
+          updateList();
 
-            // Send Data
-            playerList.sentToWebserver(this);
+          // Send Data
+          playerList.sentToWebserver(this);
 
-            // Restart timer 
-            webserviceStopwatch.Restart();
+          // Restart timer 
+          webserviceStopwatch.Restart();
         }
       }
       catch (Exception e)
@@ -157,10 +157,12 @@ namespace PlayerCoords
       running = false;
     }
 
-    public void updateList () {
+    public void updateList()
+    {
       // Reset list 
       playerList.players.Clear();
-      if (ClientState.LocalPlayer != null) {
+      if (ClientState.LocalPlayer != null)
+      {
         playerList.currentPlayer = Player.fromCharacter(ClientState.LocalPlayer);
       }
 
