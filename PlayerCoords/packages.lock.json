@@ -14,6 +14,16 @@
         "resolved": "1.0.9",
         "contentHash": "0C2NW2nWDBCMuDGqKqBeLIu8ijcJp4/RkWZ50m6MdiU5yahtIaajyeMvUNmPrv+EdEZ780vvkLnvKEsGNhr/mg=="
       },
+      "NAudio": {
+        "type": "Direct",
+        "requested": "[1.10.0, )",
+        "resolved": "1.10.0",
+        "contentHash": "y6VvwSPfJhElUllkzE2FHXHAADYFGLwMPt048KlPyuUXcq4E0VEi+4hWrFd+lBsrb+Q5DvPA9w86oRTvKRO9UQ==",
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "System.Resources.Extensions": "4.7.0"
+        }
+      },
       "Microsoft.NETCore.Platforms": {
         "type": "Transitive",
         "resolved": "3.1.0",
