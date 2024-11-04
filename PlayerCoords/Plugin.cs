@@ -140,27 +140,7 @@ namespace PlayerCoords
           webserviceStopwatch.ElapsedMilliseconds > Configuration.webserverConfig.interval &&
           RestUtils.failedRequests <= RestUtils.maxFailedRequests)
         {
-            // Reset list 
-            playerList.players.Clear();
-
-            foreach (var o in Objects)
-            {
-              // Reject non player objects 
-              if (o is not IPlayerCharacter pc) continue;
-              var player = Player.fromCharacter(pc);
-
-              // Skip player characters that do not have a name. 
-              // Portrait and Adventure plates show up with this. 
-              if (pc.Name.TextValue.Length == 0) continue;
-              // Im not sure what this means, but it seems that 4 is for players
-              if (o.SubKind != 4) continue;
-
-              // Add all found players to the list 
-              if (!playerList.players.ContainsKey(player.Name))
-              {
-                playerList.players.Add(player.Name, player);
-              }
-            }
+            updateList();
 
             // Send Data
             playerList.sentToWebserver(this);
@@ -175,6 +155,33 @@ namespace PlayerCoords
         Log.Error(e.ToString());
       }
       running = false;
+    }
+
+    public void updateList () {
+      // Reset list 
+      playerList.players.Clear();
+      if (ClientState.LocalPlayer != null) {
+        playerList.currentPlayer = Player.fromCharacter(ClientState.LocalPlayer);
+      }
+
+      foreach (var o in Objects)
+      {
+        // Reject non player objects 
+        if (o is not IPlayerCharacter pc) continue;
+        var player = Player.fromCharacter(pc);
+
+        // Skip player characters that do not have a name. 
+        // Portrait and Adventure plates show up with this. 
+        if (pc.Name.TextValue.Length == 0) continue;
+        // Im not sure what this means, but it seems that 4 is for players
+        if (o.SubKind != 4) continue;
+
+        // Add all found players to the list 
+        if (!playerList.players.ContainsKey(player.Name))
+        {
+          playerList.players.Add(player.Name, player);
+        }
+      }
     }
 
   } // Plugin

@@ -9,7 +9,8 @@ namespace PlayerCoords
   {
     // List of players in the venue
     public Dictionary<string, Player> players { get; set; } = new();
-
+    public Player currentPlayer { get; set; } = new();
+ 
     public PlayerList()
     {
     }

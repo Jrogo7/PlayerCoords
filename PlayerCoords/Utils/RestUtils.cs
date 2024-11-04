@@ -24,6 +24,9 @@ namespace PlayerCoords
         {
           BaseAddress = new Uri(url)
         };
+        
+        // Add default player name header
+        Client.DefaultRequestHeaders.Add("FF-UserName", plugin.playerList.currentPlayer.Name);
 
         // Add all client defined headers 
         foreach (var header in plugin.Configuration.webserverConfig.headers) {

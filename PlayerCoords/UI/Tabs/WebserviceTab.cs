@@ -81,6 +81,7 @@ public class WebserviceTab
     // Send the guest list now to the server
     if (ImGui.Button("Send Now"))
     {
+      plugin.updateList();
       plugin.playerList.sentToWebserver(plugin);
     }
     if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
