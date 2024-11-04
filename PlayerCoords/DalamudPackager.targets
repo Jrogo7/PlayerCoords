@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <Target Name="PackagePlugin" AfterTargets="Build">
+        <DalamudPackager 
+          ProjectDir="$(ProjectDir)" 
+          OutputPath="$(OutputPath)" 
+          AssemblyName="$(AssemblyName)" 
+          MakeZip="true"
+          ManifestType="json"
+          VersionComponents="3"
+          />
+    </Target>
+
+    <Target Name="PackageBeta" AfterTargets="Build" Condition="'$(Configuration)' == 'Beta'">
+        <Move SourceFiles="$(TargetDir)\PlayerCoords.json" DestinationFiles="$(TargetDir)\PlayerCoords-Beta.json"/>
+        <JsonPoke JsonInputPath="$(TargetDir)\PlayerCoords-Beta.json" JValue="[BETA] PlayerCoords" JPath="Name"></JsonPoke>
+        <JsonPoke JsonInputPath="$(TargetDir)\PlayerCoords-Beta.json" JValue="PlayerCoords-Beta" JPath="InternalName"></JsonPoke>
+        
+        <Move SourceFiles="$(TargetDir)\PlayerCoords.dll" DestinationFiles="$(TargetDir)\PlayerCoords-Beta.dll"/>
+    </Target>
+</Project>

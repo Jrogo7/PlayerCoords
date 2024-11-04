@@ -1,0 +1,14 @@
+{
+  "Author": "Jrogo",
+  "Name": "Player Coords",
+  "Punchline": "Get the coordinate information for all nearby players",
+  "Description": "Allows you to get the coordinate information for all nearby players",
+  "ApplicableVersion": "any",
+  "InternalName": "PlayerCoords",
+  "AssemblyVersion": "1.0.0",
+  "RepoUrl": "https://github.com/Jrogo7/PlayerCoords",
+  "Tags": [
+    "players"
+  ],
+  "IconUrl": "https://raw.githubusercontent.com/Jrogo7/PlayerCoords/master/images/icon.png"
+}
