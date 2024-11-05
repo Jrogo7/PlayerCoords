@@ -35,6 +35,7 @@ namespace PlayerCoords
     private MainWindow MainWindow { get; init; }
 
     private Stopwatch webserviceStopwatch = new();
+    private Stopwatch refreshStopwatch = new();
 
     private bool running = false;
 
@@ -118,10 +119,12 @@ namespace PlayerCoords
     public void startTimers()
     {
       webserviceStopwatch.Start();
+      refreshStopwatch.Start();
     }
 
     public void stopTimers()
     {
+      refreshStopwatch.Stop();
       webserviceStopwatch.Stop();
     }
 
@@ -135,6 +138,12 @@ namespace PlayerCoords
       running = true;
       try
       {
+        // Update list on an interval 
+        if (webserviceStopwatch.ElapsedMilliseconds > 1000) {
+          updateList();
+          refreshStopwatch.Restart();
+        }
+
         // Send data to server 
         if (Configuration.webserverConfig.sendDataOnInterval &&
           webserviceStopwatch.ElapsedMilliseconds > Configuration.webserverConfig.interval &&
