@@ -91,7 +91,7 @@ namespace PlayerCoords
       ImPlot.DestroyContext();
     }
 
-    private void OnLogout()
+    private void OnLogout(int type, int code)
     {
       stopTimers();
     }
