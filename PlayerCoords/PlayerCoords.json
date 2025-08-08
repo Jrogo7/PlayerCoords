@@ -5,7 +5,7 @@
   "Description": "Allows you to get the coordinate information for all nearby players",
   "ApplicableVersion": "any",
   "InternalName": "PlayerCoords",
-  "AssemblyVersion": "1.4.0",
+  "AssemblyVersion": "2.0.0",
   "RepoUrl": "https://github.com/Jrogo7/PlayerCoords",
   "Tags": [
     "players"
