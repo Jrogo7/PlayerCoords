@@ -12,7 +12,7 @@ namespace PlayerCoords
     {
       try
       {
-        Util.WriteAllTextSafe(path, output);
+        FilesystemUtil.WriteAllTextSafe(path, output);
       }
       catch (Exception exception)
       {
@@ -25,7 +25,7 @@ namespace PlayerCoords
       try
       {
         string output = JsonConvert.SerializeObject(objectData, fileType, new JsonSerializerSettings { Formatting = Formatting.Indented });
-        Util.WriteAllTextSafe(path, output);
+        FilesystemUtil.WriteAllTextSafe(path, output);
       }
       catch (Exception exception)
       {

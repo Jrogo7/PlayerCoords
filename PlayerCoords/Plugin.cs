@@ -7,8 +7,8 @@ using PlayerCoords.Windows;
 using Dalamud.Game.ClientState.Objects.SubKinds;
 using System.Diagnostics;
 using System;
-using ImPlotNET;
-using ImGuiNET;
+using Dalamud.Bindings.ImPlot;
+using Dalamud.Bindings.ImGui;
 
 namespace PlayerCoords
 {

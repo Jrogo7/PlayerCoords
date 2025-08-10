@@ -3,7 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Dalamud.Interface.ImGuiFileDialog;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 
 namespace PlayerCoords.Widgets;
 
