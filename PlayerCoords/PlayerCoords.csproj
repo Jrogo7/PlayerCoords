@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Dalamud.NET.Sdk/13.0.0">
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
     <Authors>Jrogo</Authors>
     <Company></Company>
@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/Jrogo7/PlayerCoords</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Configurations>Debug;Release;Beta</Configurations>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
