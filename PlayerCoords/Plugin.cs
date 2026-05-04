@@ -110,7 +110,7 @@ namespace PlayerCoords
     public void ToggleConfigUI() => MainWindow.Toggle();
     public void ToggleMainUI() => MainWindow.Toggle();
 
-    private void OnTerritoryChanged(ushort territory)
+    private void OnTerritoryChanged(uint territory)
     {
       // Clear outdoor events list 
       playerList.players = new();
@@ -170,9 +170,9 @@ namespace PlayerCoords
     {
       // Reset list 
       playerList.players.Clear();
-      if (ClientState.LocalPlayer != null)
+      if (Objects.LocalPlayer != null)
       {
-        playerList.currentPlayer = Player.fromCharacter(ClientState.LocalPlayer);
+        playerList.currentPlayer = Player.fromCharacter(Objects.LocalPlayer);
       }
 
       foreach (var o in Objects)
